@@ -6,7 +6,7 @@
  * 
  */
 
-const wowMath = require('wow1186-math');
+const wowMath = require('douzone-busan-math');
 
 console.log(wowMath.sum(1,2,3,4));
 console.log(wowMath.max(-10,-20,-30,-40));

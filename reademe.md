@@ -33,8 +33,36 @@ npm un -g gulp // (global install 삭제)
 
 ## Node(JavaScript) Project (Application , Package) 생성
 
-- 1. 프로젝트 디렉토리를 생성(mkdir)
-- 2. 프로젝트 디렉토리로 이동(cd)
-- 3. [project-ex01] $ npm init (프로젝트 매니페스트 파일(package.json) 생성)
+1. 프로젝트 디렉토리를 생성(mkdir)
+2. 프로젝트 디렉토리로 이동(cd)
+3. [project-ex01] $ npm init (프로젝트 매니페스트 파일(package.json) 생성)
 
+
+- - -
+
+## 모듈  
+1. **코어모듈:** (fs , os  ... node에서 제공 해주는 모듈
+1. **파일모듈:** 파일의 경로를 불러와서 모듈안의 객체 , 함수 , 클래스 들의 함수를 사용한다.
+1. **npm모듈 :** npm을 통해서 node_modules에 설치해서 사용하는 모듈
+
+## 패키지 설치방법
+- 로컬 뱊
+- 원격 배포 
+- - -
+
+## npmjs.com npm registry에 패키지 배포 하기 
+
+
+1. 사용자 등록
+- ```npm adduser ```  입력 
+- ```UserName :  아이디 입력 ```
+- ```Password :  비밀번호  입력 ```
+-  ```Email :  이메일  입력 ```
+
+
+2.  업로드
+   - ```npm publish```
+
+
+ 
 
