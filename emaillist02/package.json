@@ -1,8 +1,8 @@
 {
-  "name": "project-ex03",
+  "name": "emaillist02",
   "version": "1.0.0",
   "description": "",
-  "main": "app-ex01.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "douzone-busan-math": "1.0.0",
-    "wow1186-math": "1.0.0"
+    "ejs": "3.1.6",
+    "express": "4.17.1",
+    "mysql": "2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.12"
   }
 }

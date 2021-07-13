@@ -12,26 +12,12 @@ app.use(connectRoute(function(router) {
         res.writeHead(200 ,{
              'Content-Type' : "text/html"
          });
+         res.end("<h1>board view(" + req.params.no  + ") <h1>");
      });
-     res.end("<h1>board view(" + req.params.no  + ") <h1>");
+
      
 
-     router.get("/" , function(req,res) {
-
-        req.query= {};
-        params = req._parsedUrl-query;
-        
-        res.writeHead(200 ,{
-             'Content-Type' : "text/html"
-         });
-     });
-     res.end("<h1>board view(" + req.params.no  + ") <h1>");
-     router.get("/" , function(req,res) {
-        res.writeHead(200 ,{
-             'Content-Type' : "text/html"
-         });
-     });
-     res.end("<h1>main<h1>");
+  
 }));
 app.listen(port,function(){
     console.log(`Http Server running port ${port}`);

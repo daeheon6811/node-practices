@@ -4,7 +4,7 @@
 
 ## 2. 의존성(Dependency)
 
--   **개발하고 있는 프로젝트(패키지 , 애플리케이션)에서 설치하고 사용하고 다른 패키지**
+  ##### **개발하고 있는 프로젝트(패키지 , 애플리케이션)에서 설치하고 사용하고 다른 패키지**
 
 
 - 1. 일반 의존성: 개발하고 있는 애플리케이션에서 사용하는 패키지로 배포에 꼭 포함.
@@ -62,6 +62,73 @@ npm un -g gulp // (global install 삭제)
 
 2.  업로드
    - ```npm publish```
+
+- - - 
+
+# 맨바닥에서 웹 애플리케이션 만들어보기
+
+1.``` based on http core module```
+2.``` based on (http, fs) core module```
+3.``` based on (connect, serve-static ,  connect-route) npm package(module)```
+4.``` based on express npm package```
+
+
+- [helloweb-ex02] npm init -y
+- [helloweb-ex02] npm i express
+- [helloweb-ex02] npm i ejs
+- [helloweb-ex02] npm i -D nodemon
+
+## package.json  수정
+
+
+```javascript
+"scripts": {
+    "start": "node index.js",
+    "debug" : "nodemon index.js"
+  },
+```
+- [helloweb-ex02] ```npm start (운용시...)```
+- [helloweb-ex02] ```npm run debug (개발시 ... Live Update)```
+
+
+- [helloweb-ex02] ```mkdir public```
+- [helloweb-ex02] ```mkdir views```
+- [helloweb-ex02] ``` mkdir routes```
+- [helloweb-ex02] ``` mkdir controllers```
+- [helloweb-ex02] ``` mkdir models```
+  
+
+- - -
+
+  ### emaillist01 (model based mysql) - 기본 sql 기반
+
+- [emaillist01] npm i express
+- [emaillist01] npm i mysql
+- [emaillist01] npm i ejs
+- [emaillist01] npm i -D nodemon
+
+## package.json  수정
+
+
+```javascript
+"scripts": {
+    "start": "node index.js",
+    "debug" : "nodemon index.js"
+  },
+```
+- [emaillist01] ```npm start (운용시...)```
+- [emaillist01] ```npm run debug (개발시 ... Live Update)```
+
+
+- [emaillist01] ```mkdir public```
+- [emaillist01] ```mkdir views```
+- [emaillist01] ``` mkdir routes```
+- [emaillist01] ``` mkdir controllers```
+- [emaillist01] ``` mkdir models```
+  
+
+
+  ### emaillist02 (model based Sequelize) - ORM]
 
 
  
