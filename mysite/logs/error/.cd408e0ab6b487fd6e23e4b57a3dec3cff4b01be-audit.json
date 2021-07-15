@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "D:\\vscode-projects\\backend-dev\\mysite\\logs\\error\\.cd408e0ab6b487fd6e23e4b57a3dec3cff4b01be-audit.json",
+    "files": [
+        {
+            "date": 1626315762400,
+            "name": "D:\\vscode-projects\\backend-dev\\mysite\\logs\\error\\2021-07-15.error.log",
+            "hash": "e056377a4c796a09d23362681907d474"
+        }
+    ]
+}

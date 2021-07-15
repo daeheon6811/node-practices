@@ -14,8 +14,15 @@ dotenv.config({
    });
 const mainRouter = require('./routes/main');
 const userRouter = require('./routes/user');
+const userApiRouter = require('./routes/user-api');
+
 const guestbookRouter = require('./routes/guestbook');
-const port = 8080;
+const errorRouter = require('./routes/error')
+
+
+
+// Logging
+const logger = require('./logging');
 
 
 
@@ -48,7 +55,10 @@ const application = express()
     .use('/', mainRouter)
     .use('/user', userRouter)
     .use('/guestbook', guestbookRouter)
-    .use((req,res) => res.render("error/404"));
+    .use('/api/user', userApiRouter)
+     .use(errorRouter.error404)
+     .use(errorRouter.error500)
+
 
 // Server Setup    
 http.createServer(application)
@@ -61,11 +71,11 @@ http.createServer(application)
         }
         switch(error.code){
             case 'EACCESS':
-                console.error(`Port: ${process.env.PORT} requires privileges`);
+                logger.error(`Port: ${process.env.PORT} requires privileges`);
                 process.exit(1);
                 break;
             case 'EADDRINUSE':
-                console.error(`Port: ${process.env.PORT} is already in use`);
+                logger.error(`Port: ${process.env.PORT} is already in use`);
                 process.exit(1);
                 break;
             default:

@@ -1,3 +1,4 @@
+const logger = require('../logging');
 const models = require('../models');
 module.exports = {
     joinsuccess: function(req, res) {
@@ -26,16 +27,16 @@ module.exports = {
                 email: req.body.email,
                 password: req.body.password
             }
-        });
+        }).catch(error => {
+            
+        })
+      ;
         
         if(user == null){
             res.render('user/loginform',  Object.assign(req.body , {
                 result: 'fail',
                 password: ''
             }));
-
-
-
             return;
         }
                //로그인 처리
@@ -59,12 +60,6 @@ module.exports = {
     },
     update: async function(req, res) {
     
-console.log(req.body.name);
-console.log(req.body.email);
-console.log(req.body.password);
-console.log(req.body.gender);
-console.log(req.session.authUser.email);
-
 
         const user = await models.User.update(
             {
@@ -84,10 +79,12 @@ console.log(req.session.authUser.email);
             req.session.authUser.email = req.body.email;
             req.session.authUser.name = req.body.name;
             res.redirect("/");
-        })
+        }).catch(error => {
+            
+          })
+        
+        
 
    
-    },
-
-    
+    },  
 }

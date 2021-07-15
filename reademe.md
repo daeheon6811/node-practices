@@ -131,5 +131,43 @@ npm un -g gulp // (global install 삭제)
   ### emaillist02 (model based Sequelize) - ORM]
 
 
- 
+- [mysite] npm i express
+- [mysite] npm i express-session
+- [mysite] npm i ejs
+- [mysite] npm i -D nodemon
+- [mysite] npm i dotenv port 설정 관련
+- [mysite] npm i sequelize
+- [mysite] npm i mysql2
+- [mysite] npm i moment
+- 
+```json
+{
+"scripts" : "node.index.js",
+"debug" : "nodemon index.js"
+}
+```
 
+
+## project structure
+<pre>
+/mysite
+   |--- index.js
+   |--- package.json
+   |--- package-lock.json
+   |--- /node-modules
+   |--- /config
+   |--- /logging
+   |--- /logs
+   |--- /public
+   |--- /routes
+   |--- /controllers
+   |--- /models
+   |--- /views
+          |-- /main
+          |-- /user
+          |-- /guestbook
+          |-- /board
+          |-- /gallery
+          |-- /admin    
+
+</pre>
