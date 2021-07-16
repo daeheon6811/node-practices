@@ -12,7 +12,9 @@ module.exports = {
         })
     },
 
-    
+    spalanding: function(req, res, next){
+        res.render('guestbook/spa');
+    },    
     add: async function(req, res) {
 
 

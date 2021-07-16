@@ -111,10 +111,12 @@ npm un -g gulp // (global install 삭제)
 
 
 ```javascript
+
 "scripts": {
     "start": "node index.js",
     "debug" : "nodemon index.js"
   },
+
 ```
 - [emaillist01] ```npm start (운용시...)```
 - [emaillist01] ```npm run debug (개발시 ... Live Update)```
@@ -160,6 +162,9 @@ npm un -g gulp // (global install 삭제)
    |--- /logs
    |--- /multer-temporary-store
    |--- /public
+   |        |--- /assets
+   |                 |--- gallery
+   |                 |
    |--- /routes
    |--- /controllers
    |--- /models

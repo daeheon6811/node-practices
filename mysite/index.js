@@ -17,9 +17,9 @@ dotenv.config({
 const mainRouter = require('./routes/main');
 const userRouter = require('./routes/user');
 const userApiRouter = require('./routes/user-api');
-
-const guestbookRouter = require('./routes/guestbook');
 const guestbookApiRouter = require('./routes/guestbook-api');
+const guestbookRouter = require('./routes/guestbook');
+
 const errorRouter = require('./routes/error')
 const galleryRouter = require('./routes/gallery')
 
@@ -68,7 +68,6 @@ const application = express()
     .use('/user', userRouter)
     .use('/guestbook', guestbookRouter)
     .use('/gallery', galleryRouter)
-    
     .use('/api/user', userApiRouter)
     .use('/api/guestbook', guestbookApiRouter)
      .use(errorRouter.error404)
