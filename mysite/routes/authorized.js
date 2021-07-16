@@ -1,20 +1,18 @@
-module.exports = function(req , res , next){
-      if(req.session.authUser){
-            next();
-           return
+module.exports = function(req, res, next) {
+      if(req.session.authUser) {
+          next();
+          return;
       }
-
-      if(req.accpes('html')){
-            res.redirect("user/login");
-            return;
+  
+      if(req.accepts('html')){
+          res.redirect('/user/login');
+          return;
       }
-
-
+  
       res.send({
-            result: "faile",
-            data: null ,
-            message : "auth failed"
-
+          result: "fail",
+          data: null,
+          message: "auth failed"
       })
-      
-}
+  
+  }
