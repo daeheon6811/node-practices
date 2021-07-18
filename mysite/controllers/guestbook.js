@@ -1,57 +1,45 @@
 const models = require('../models');
+const moment = require('moment');
 
 module.exports = {
-    index: async function(req, res) {
-        
-        const guestbook = await models.Guestbook.findAll({
-            attributes: ['no', 'name' ,'message' , 'regdate'],
-        });
-
-        res.render("guestbook/list" , {
-            list : guestbook,
-        })
+    index: async function(req, res, next) {
+        try { 
+            const results = await models.Guestbook.findAll({
+                attributes: ['no', 'name', 'message', 'regDate'],
+                order: [
+                    ['no', 'DESC']
+                ]
+            });
+            res.render('guestbook/index', {
+                guestbooks: results,
+                moment: moment
+            });
+        } catch(e) {
+            next(e);
+        }         
     },
-
     spalanding: function(req, res, next){
-        res.render('guestbook/spa');
-    },    
-    add: async function(req, res) {
-
-
-    
-        const result = await models.Guestbook.create({
-            name: req.body.name,
-            password: req.body.password,
-            message: req.body.message,
-            regdate: Date.now()
-        });
-        console.log(result);
-        res.redirect('/guestbook');
+        res.render('guestbook/spa-landing');
     },
-    deleteform: function(req, res) {   
-      
-        res.render('guestbook/deleteform' , {
-            no : req.params.no || []
-        });
-        console.log(req.params.no);
-      
+    delete: function(req, res) {
+        res.render('guestbook/delete');
     },
-    delete: async function(req, res) {
-             
-
-        console.log("딜리트 실행!!");
-        const result = await models.Guestbook.destroy(
-            {
-            where: {
-                no: req.body.no ,
-                password: req.body.password
-                
-            }
-            
-        })
-        .then( result => {
-            console.log("데이터 삭제 끝");
-            res.redirect("/guestbook");
-        })
+    _delete: async function(req, res, next) {
+        try { 
+            await models.Guestbook.destroy({
+                where: req.body
+            });
+            res.redirect('/guestbook');
+        } catch(e) {
+            next(e);
+        }   
+    },
+    add: async function(req, res, next) {
+        try {        
+            await models.Guestbook.create(req.body);
+            res.redirect('/guestbook');
+        } catch(e) {
+            next(e);
+        }        
     }
 }

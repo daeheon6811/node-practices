@@ -1,12 +1,12 @@
-const {Sequelize, DataTypes} = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 
-module.exports = function(sequelize){
+module.exports = function(sequelize) {
     return sequelize.define('Gallery', {
-        no: {
+        no: { 
             field: 'no',
             type: DataTypes.BIGINT(11),
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true 
         },
         comment: {
             field: 'comment',
@@ -17,9 +17,9 @@ module.exports = function(sequelize){
             field: 'url',
             type: DataTypes.STRING(200),
             allowNull: false
-        },
+        }
     }, {
-        underscored: true,
+        underscored: true,    
         freezeTableName: true,
         timestamps: true,
         createdAt: false,
