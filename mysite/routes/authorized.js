@@ -1,6 +1,8 @@
 module.exports = function(role) {
     return function(req, res, next) {
         if(req.session.authUser && (role !== 'ADMIN' || req.session.authUser.role === 'ADMIN')) {
+
+ 
             next();
             return;
         } 

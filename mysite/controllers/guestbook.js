@@ -14,7 +14,7 @@ module.exports = {
                 guestbooks: results,
                 moment: moment
             });
-        } catch(e) {
+        } catch(e) { 
             next(e);
         }         
     },
@@ -34,6 +34,7 @@ module.exports = {
             next(e);
         }   
     },
+    
     add: async function(req, res, next) {
         try {        
             await models.Guestbook.create(req.body);

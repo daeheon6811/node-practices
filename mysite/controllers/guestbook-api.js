@@ -44,7 +44,7 @@ module.exports = {
             });
             res.send({
                 result: 'success',
-                data: req.params.no,
+                data: eq.params.nor,
                 message: null
             });
         } catch(err){
